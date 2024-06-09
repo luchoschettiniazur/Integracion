@@ -10,7 +10,7 @@ namespace Models.Entidades
     public class Marca
     {
         [Key]
-        [Column("CategoriaId")]
+        [Column("MarcaId")]
         public int Id { get; set; }
 
 
