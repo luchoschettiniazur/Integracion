@@ -25,7 +25,14 @@ private readonly ApplicationDbContext _context;
     [HttpGet]
     public async Task<ActionResult<List<ProductoDto>>> GetProductos(){
 
-        var x = await _context.Productos.Include(c => c.Categoria).Include(m => m.Marca).ToListAsync();
+        var x1 = await _context.Productos.ToListAsync();
+        var x2 = await _context.Productos.Include(c => c.Categoria).ToListAsync();
+
+        var x3 = await _context.Productos.Include(c => c.Marca).ToListAsync();
+
+
+
+        var x4 = await _context.Productos.Include(c => c.Categoria).Include(m => m.Marca).ToListAsync();
 
         List<ProductoDto> lista = await _context.Productos.Include(c => c.Categoria)
                                                             .Include(m => m.Marca)
